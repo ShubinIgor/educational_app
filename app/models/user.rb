@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
+
   before_save   :downcase_email
   attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
@@ -52,6 +54,11 @@ class User < ApplicationRecord
  # Отправляет электронное письмо для сброса пароля.
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
+  end
+  # Определяет прото-ленту.
+  # Полная реализация в "Следовании за пользователями".
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private

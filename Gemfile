@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 6.0.0'
+ruby '2.6.0'
+
+gem 'rails', '6.0.4.4'
+gem 'active_storage_validations'
 gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate'
