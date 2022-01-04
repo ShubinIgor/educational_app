@@ -1,0 +1,31 @@
+- provide(:title, 'Sign up')
+h1 Sign up
+.row
+  div class="col-md-6 col-md-offset-3"
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+
+      = f.label :email
+      = f.email_field :email, class: 'form-control'
+
+      = f.label :password
+      - if @minimum_password_length
+
+      em
+        |  (
+        = @minimum_password_length
+        |  characters minimum)
+      = f.password_field :password, class: 'form-control'
+
+      = f.label :password_confirmation, "Confirmation"
+      = f.password_field :password_confirmation, class: 'form-control'
+
+      = f.label :remember_me, class: "checkbox inline" do
+        = f.check_box :remember_me
+
+        span Remember me on this computer
+
+      = f.submit "Log in", class: "btn btn-primary"

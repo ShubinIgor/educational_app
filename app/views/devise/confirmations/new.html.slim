@@ -1,0 +1,13 @@
+- provide(:title, '#')
+h1 Resend confirmation instructions
+.row
+   div class="col-md-6 col-md-offset-3"
+    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+
+      = f.label :email
+      = f.email_field :email, class: 'form-control'
+
+      = f.submit "Resend confirmation instructions", class: "btn btn-primary"
+
+    = render "devise/shared/links" 

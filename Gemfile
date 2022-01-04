@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 gem 'rails', '6.0.4.4'
+gem 'devise', '~> 4.8.1'
 gem 'slim'
 gem 'active_storage_validations'
 gem 'bcrypt'
@@ -26,6 +27,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem "letter_opener"
 end
 group :test do
   gem 'capybara'
