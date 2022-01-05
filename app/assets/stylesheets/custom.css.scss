@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.checkbox{
+  width: 1em;
+  display: inline-block;
+}
+
+
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {

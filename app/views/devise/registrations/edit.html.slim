@@ -1,0 +1,31 @@
+- provide(:title, "Edit User")
+h1 Edit User
+.row
+  div class="col-md-6 col-md-offset-3"
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), method: :put) do |f|
+        = render "devise/shared/error_messages", resource: resource
+
+        = f.input :name, label: 'Name'
+
+        = f.input :email, label: 'Email'
+
+        = if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          div Currently waiting confirmation for: = resource.unconfirmed_email
+
+        = f.input :password, label: 'Password'
+
+        = f.input :password_confirmation, label: "Confirmation"
+
+        = f.input :current_password, label: "Current password"
+
+        = f.submit "Update", class: "btn btn-primary"
+
+      h3 Cancel my account
+
+
+
+      = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-secondary"
+
+      br
+
+      = link_to "Back", :back
