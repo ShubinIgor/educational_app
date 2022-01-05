@@ -7,6 +7,15 @@ gem 'rails', '6.0.4.4'
 gem 'devise', '~> 4.8.1'
 gem 'slim'
 gem 'simple_form'
+
+
+
+# Plus integrations with:
+gem 'activeadmin'
+gem 'cancancan'
+gem 'pundit'
+gem 'draper'
+
 gem 'active_storage_validations'
 gem 'bcrypt'
 gem 'faker'

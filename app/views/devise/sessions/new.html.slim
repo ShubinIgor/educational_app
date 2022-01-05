@@ -6,6 +6,7 @@ h1 Log in
       = f.input :email, label: 'Email'
       = f.input :password, label: 'Password'
       = f.check_box :remember_me, class: "checkbox"
+      span<> Remember me on this computer
       = f.submit "Log in", class: "btn btn-primary"
     br
     = render "devise/shared/links"

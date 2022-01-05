@@ -1,14 +1,10 @@
 - provide(:title, '#')
 h1 Forgot your password?
 .row
-  div class="col-md-6 col-md-offset-3"
+  .col-md-6.col-md-offset-3
     = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = render "devise/shared/error_messages", resource: resource
-
       = f.input :email, label: 'Email'
-
       = f.submit "Send me reset password instructions", class: "btn btn-primary"
-
-      br
-
+    br
       = render "devise/shared/links"

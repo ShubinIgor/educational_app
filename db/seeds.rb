@@ -10,11 +10,9 @@ User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "111111",
              password_confirmation: "111111",
-             admin: true,
-             activated: true,
-             activated_at: Time.zone.now)
+             admin: true)
 
-99.times do |n|
+10.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -36,3 +34,4 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
